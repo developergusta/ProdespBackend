@@ -18,6 +18,7 @@ namespace Prodesp.Domain.Models
         public string? Nome { get; set; }
 
         [Required]
+        [Range(2021, int.MaxValue, ErrorMessage = "O ano do lote deverá ser maior ou igual ao ano anterior")]
         public int AnoLote { get; set; }
 
         public DateTime? DataCadastro { get; set; }
@@ -25,6 +26,5 @@ namespace Prodesp.Domain.Models
         [Required]
         public Fabricante Fabricante { get; set; }
 
-        private static int maxDate { get; set; }
     }
 }
